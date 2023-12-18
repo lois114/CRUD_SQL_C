@@ -1,0 +1,65 @@
+﻿<Window x:Class="wpf_base.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_base" xmlns:c="clr-namespace:wpf_base.C" d:DataContext="{d:DesignInstance Type=c:C_COORDINATION}"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        
+        Title="MainWindow" Height="573" Width="1037">
+
+    <Window.Background>
+        <ImageBrush ImageSource="/P/89c05d22795335.563188426ea3c.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <ListBox x:Name="LST_ROLES"  d:ItemsSource="{d:SampleData ItemCount=5}" SelectedItem="{Binding Role_Select}" ItemsSource="{Binding Les_Roles}" Grid.Column="0"  Margin="64,147,276,99" SelectionChanged="LST_ROLES_SelectionChanged" FontWeight="Bold" Foreground="#FF9F8E76" BorderBrush="#FF735832" Background="#72113E57">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Nom_Role}" Width="100" Margin="8"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+        <Button x:Name="SUP_PERSO" IsEnabled="{Binding Peut_Sup_Personne}" Grid.Column="0"  Content="Sup" Margin="314,0,74,433"  Foreground="#FF735832" BorderBrush="#FF735832" Background="#FF02060B" Height="20" VerticalAlignment="Bottom" Click="SUP_PERSO_Click_1" />
+        <Button x:Name="SUP_ROLE" IsEnabled="{Binding Peut_Sup_Role}" Grid.Column="0"  Content="Sup" Margin="88,0,300,433"  Foreground="#FF735832" BorderBrush="#FF735832" Background="#FF02060B" Height="20" VerticalAlignment="Bottom" Click="SUP_ROLE_Click"  />
+
+        <Button x:Name="BTN_ADD_ROLES" Grid.Column="0"  Content="Add" Margin="98,0,290,19" Click="BTN_ADD_ROLES_Click" Foreground="#FF735832" BorderBrush="#FF735832" Background="#FF02060B" Height="20" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="txt_Role"  Grid.Column="0"  Canvas.Left="100" TextWrapping="Wrap" Text="{Binding Nom_Nouveau_Role}" Canvas.Top="10" Margin="64,0,256,49" BorderBrush="#FF735832" Background="#FF081620" Foreground="#FF735832" Height="32" VerticalAlignment="Bottom"/>
+
+
+
+        <ListBox x:Name="LST_PERSONNAGES" SelectedItem="{Binding Perso_Select}" SelectionChanged="LST_PERSONNAGES_SelectionChanged"  d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding Les_Personnages}" Grid.Column="0"  Margin="250,147,10,99" BorderBrush="#FF735832" Foreground="#FF9F8E76" Background="#72113E57" FontWeight="Bold" MouseDoubleClick="LST_PERSONNAGES_MouseDoubleClick">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Nom_Personnage}" Width="100" Margin="8"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button x:Name="BTN_ADD_PERSO"  IsEnabled="{Binding Peut_Add_Personne}"  Content="Add" Margin="314,513,0,0" Click="BTN_ADD_PERSO_Click" Background="#FF02060B" BorderBrush="#FF67402E" Foreground="#FF67402E" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130" />
+
+        <TextBox x:Name="txt_Perso"  Grid.Column="0" Canvas.Left="100" TextWrapping="Wrap" Text="{Binding Perso_Select}" Canvas.Top="10" Margin="0,460,30,0" Background="#FF081620" BorderBrush="#FF735832" Foreground="#FF735832" Height="32" VerticalAlignment="Top" HorizontalAlignment="Right" Width="198"/>
+        <TextBox x:Name="txt_URL"  Grid.Column="0" Canvas.Left="100" TextWrapping="Wrap" Text="{Binding Url_Image}" Canvas.Top="10" Margin="0,496,30,0" Background="#FF081620" BorderBrush="#FF735832" Foreground="#FF735832" Height="17" VerticalAlignment="Top" HorizontalAlignment="Right" Width="198" RenderTransformOrigin="0.5,0.5"/>
+
+
+
+
+        <TextBox x:Name="text_Perso_Modif"  Grid.Column="1" Canvas.Left="100" TextWrapping="Wrap" Text="{Binding Copie_Personnage.Nom_Personnage}" Canvas.Top="10" Margin="0,489,293,0" Background="#FF081620" BorderBrush="#FF735832" Foreground="#FF735832" Height="31" VerticalAlignment="Top" HorizontalAlignment="Right" Width="198"/>
+        <TextBox x:Name="txt_URL_Modif"  Grid.Column="1" Canvas.Left="100" TextWrapping="Wrap" Text="{Binding Copie_Personnage.Image}" Canvas.Top="10" Margin="0,496,78,0" Background="#FF081620" BorderBrush="#FF735832" Foreground="#FF735832" Height="17" VerticalAlignment="Top" HorizontalAlignment="Right" Width="198" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="BTN_MODIF_PERSO"    Content="Modif" Margin="234,518,0,0"  Background="#FF02060B" BorderBrush="#FF67402E" Foreground="#FF67402E" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130" Grid.Column="1" Click="BTN_MODIF_PERSO_Click" />
+
+
+        <Image x:Name="IMAGE_LOL"  Grid.Column="1" Margin="16,141,28,48"/>
+
+
+
+
+    </Grid>
+</Window>

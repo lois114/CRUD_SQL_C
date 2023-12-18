@@ -1,0 +1,342 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "WEB_API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/Lol/GetAllPerso": {
+      "get": {
+        "tags": [
+          "C_SERVICE"
+        ],
+        "operationId": "GetAllPerso",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/C_PERSONNAGES"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/C_PERSONNAGES"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/C_PERSONNAGES"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Lol/GetAllRole": {
+      "get": {
+        "tags": [
+          "C_SERVICE"
+        ],
+        "operationId": "GetAllRole",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/C_ROLES"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/C_ROLES"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/C_ROLES"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Lol/GetPersobyRole": {
+      "get": {
+        "tags": [
+          "C_SERVICE"
+        ],
+        "operationId": "GetPersobyRole",
+        "parameters": [
+          {
+            "name": "P_ID",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/C_PERSONNAGES"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/C_PERSONNAGES"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/C_PERSONNAGES"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Lol/Add_Personnage": {
+      "put": {
+        "tags": [
+          "C_SERVICE"
+        ],
+        "operationId": "AddPerso",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/C_PERSONNAGES"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/C_PERSONNAGES"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/C_PERSONNAGES"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/C_PERSONNAGES"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/C_PERSONNAGES"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/C_PERSONNAGES"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Lol/Add_Roles": {
+      "put": {
+        "tags": [
+          "C_SERVICE"
+        ],
+        "operationId": "AddRoles",
+        "parameters": [
+          {
+            "name": "P_Nom",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/C_ROLES"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/C_ROLES"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/C_ROLES"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Lol/Delete_Personnages": {
+      "delete": {
+        "tags": [
+          "C_SERVICE"
+        ],
+        "operationId": "DeletePersonnages",
+        "parameters": [
+          {
+            "name": "P_Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Lol/Delete_Roles": {
+      "delete": {
+        "tags": [
+          "C_SERVICE"
+        ],
+        "operationId": "DeleteRoles",
+        "parameters": [
+          {
+            "name": "P_Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Lol/Modif_Perso": {
+      "put": {
+        "tags": [
+          "C_SERVICE"
+        ],
+        "operationId": "ModifPerso",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/C_PERSONNAGES"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/C_PERSONNAGES"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/C_PERSONNAGES"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "C_PERSONNAGES": {
+        "type": "object",
+        "properties": {
+          "id_Personnages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nom_Personnage": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_Roles": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "C_ROLES": {
+        "type": "object",
+        "properties": {
+          "id_Roles": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nom_Role": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
