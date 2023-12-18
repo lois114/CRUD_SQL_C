@@ -78,7 +78,9 @@ namespace wpf_base.C
 
         public C_PERSONNAGES Copie_Personnage {
             get { return _Copie_Personnage; }
-            set { _Copie_Personnage = value; Signale_Changement(); }
+            set { _Copie_Personnage = value;
+                Peut_Modif_Perso = value != null; 
+                Signale_Changement(); }
         }
 
 
@@ -254,7 +256,18 @@ namespace wpf_base.C
                 Affiche_Personnage();
             }
         }
-      
+
+
+        private bool _Peut_Modif_Perso;
+
+        public bool Peut_Modif_Perso {
+            get { return _Peut_Modif_Perso; }
+            set {
+                _Peut_Modif_Perso = value;
+                Signale_Changement();
+            }
+        }
+
 
         // SUPRESSION // 
 
