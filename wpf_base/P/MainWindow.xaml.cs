@@ -84,7 +84,7 @@ namespace wpf_base
                     if (Personnage.Image != null) {
                         Affiche_Image(Personnage.Image);
                     } else { Affiche_Image("https://yt3.googleusercontent.com/V3r1ulI_qpPjFwr0Nq5y2d0LewJaGlyJyrfK9u9jGEuBQfCQ2vbh6Pc5DcXHkucyi9FCYGSG=s900-c-k-c0x00ffffff-no-rj"); }
-
+                     
                 }
 
             }
